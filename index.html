@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thangam Herbals</title><style>
+<title>Thangam Herbals</title>
+
+<style>
 *{
   margin:0;
   padding:0;
@@ -15,6 +18,7 @@ body{
   color:#1f3d1f;
 }
 
+/* HEADER */
 header{
   background:#1f7a1f;
   color:white;
@@ -23,6 +27,7 @@ header{
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 header h1{
@@ -36,9 +41,25 @@ nav a{
   font-weight:bold;
 }
 
+/* LOGO */
+.logo{
+  height:50px;
+  width:50px;
+  border-radius:10px;
+  object-fit:contain;
+  animation: logoZoom 1s ease-out;
+}
+
+/* BRAND TEXT */
+.brand-title{
+  animation: fadeInLeft 1s ease-out;
+}
+
+/* HERO */
 .hero{
   height:80vh;
-  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop');
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -70,6 +91,7 @@ nav a{
   font-weight:bold;
 }
 
+/* SECTIONS */
 section{
   padding:60px 20px;
   max-width:1200px;
@@ -83,6 +105,7 @@ section{
   color:#1f7a1f;
 }
 
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -136,6 +159,7 @@ section{
   font-size:14px;
 }
 
+/* REVIEW */
 .review-box{
   background:white;
   padding:25px;
@@ -159,11 +183,7 @@ section{
   height:120px;
 }
 
-.review-box button{
-  border:none;
-  cursor:pointer;
-}
-
+/* FOOTER */
 footer{
   background:#1f7a1f;
   color:white;
@@ -172,6 +192,7 @@ footer{
   margin-top:40px;
 }
 
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -193,7 +214,7 @@ footer{
   border-radius:20px;
   padding:15px;
   position:relative;
-  animation:popup 0.3s ease;
+  animation: popup 0.3s ease;
 }
 
 .modal-content img{
@@ -213,18 +234,52 @@ footer{
   cursor:pointer;
 }
 
-@keyframes popup{
+/* ANIMATIONS */
+@keyframes logoZoom{
   from{
-    transform:scale(0.7);
+    transform:scale(0.3);
     opacity:0;
   }
-
   to{
     transform:scale(1);
     opacity:1;
   }
 }
 
+@keyframes fadeInDown{
+  from{
+    transform:translateY(-30px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes fadeInLeft{
+  from{
+    transform:translateX(-20px);
+    opacity:0;
+  }
+  to{
+    transform:translateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes popup{
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* MOBILE */
 @media(max-width:768px){
   .hero-content h2{
     font-size:32px;
@@ -238,163 +293,154 @@ footer{
     margin:0 10px;
   }
 }
-</style></head><body><header>
-  <h1>Thangam Herbals</h1>  <nav>
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img class="logo" src="file_000000000bd07206858c67dfdaa7c9a0.png" alt="Logo">
+    <h1 class="brand-title">Thangam Herbals</h1>
+  </div>
+
+  <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
     <a href="#about">About</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
   </nav>
-</header><section class="hero" id="home">
+</header>
+
+<section class="hero" id="home">
   <div class="hero-content">
     <h2>Natural Herbal Wellness</h2>
     <p>Pure Herbal Products for a Healthy Life</p>
-    <p>Traditional Wellness • Natural Ingredients • Trusted Quality</p><a href="#products" class="btn">Explore Products</a>
-
+    <p>Traditional Wellness • Natural Ingredients • Trusted Quality</p>
+    <a href="#products" class="btn">Explore Products</a>
   </div>
-</section><section id="products">
-  <h2 class="section-title">Our Products</h2>  <div class="products"><div class="product-card" onclick="openModal('Core Vital','AddText_05-23-02.57.56.jpg')">
-  <img src="AddText_05-22-02.59.41.jpg" alt="Core Vital">
+</section>
 
-  <div class="product-content">
-    <h3>Core Vital (180g)</h3>
-    <p>Detox Health Drink</p>
+<section id="products">
+  <h2 class="section-title">Our Products</h2>
 
-    <div class="price">
-      <span class="old-price">₹1000</span>
-      ₹500 (50% OFF)
+  <div class="products">
+
+    <div class="product-card" onclick="openModal('Core Vital','AddText_05-23-02.57.56.jpg')">
+      <img src="AddText_05-22-02.59.41.jpg">
+      <div class="product-content">
+        <h3>Core Vital (180g)</h3>
+        <p>Detox Health Drink</p>
+        <div class="price"><span class="old-price">₹1000</span> ₹500</div>
+        <div class="offer-badge">FREE DELIVERY</div>
+      </div>
     </div>
 
-    <div class="offer-badge">🚚 FREE DELIVERY</div>
-  </div>
-</div>
-
-<div class="product-card" onclick="openModal('Nutra Nest','AddText_05-23-07.29.55.jpg')">
-  <img src="AddText_05-23-10.11.01.jpg" alt="Nutra Nest">
-
-  <div class="product-content">
-    <h3>Nutra Nest (300g)</h3>
-    <p>Protein Flour</p>
-
-    <div class="price">
-      <span class="old-price">₹200</span>
-      ₹100 (50% OFF)
-    </div>
-  </div>
-</div>
-
-<div class="product-card" onclick="openModal('Green Grid','AddText_05-23-07.17.22.jpg')">
-  <img src="AddText_05-23-03.14.59.jpg" alt="Green Grid">
-
-  <div class="product-content">
-    <h3>Green Grid (300g)</h3>
-    <p>Nutrient Food</p>
-
-    <div class="price">
-      <span class="old-price">₹1000</span>
-      ₹500 (50% OFF)
+    <div class="product-card" onclick="openModal('Nutra Nest','AddText_05-23-07.29.55.jpg')">
+      <img src="AddText_05-23-10.11.01.jpg">
+      <div class="product-content">
+        <h3>Nutra Nest (300g)</h3>
+        <p>Protein Flour</p>
+        <div class="price"><span class="old-price">₹200</span> ₹100</div>
+      </div>
     </div>
 
-    <div class="offer-badge">🚚 FREE DELIVERY</div>
-  </div>
-</div>
-
-<div class="product-card" onclick="openModal('Refresha','AddText_05-23-06.16.48.jpg')">
-  <img src="AddText_05-23-10.24.48.jpg" alt="Refresha">
-
-  <div class="product-content">
-    <h3>Refresha (270g)</h3>
-    <p>Body Cooler Rich in Iron</p>
-
-    <div class="price">
-      <span class="old-price">₹500</span>
-      ₹250 (50% OFF)
-    </div>
-  </div>
-</div>
-
-<div class="product-card" onclick="openModal('Neurozen','AddText_05-23-06.53.21.jpg')">
-  <img src="AddText_05-23-11.02.20.jpg" alt="Neurozen">
-
-  <div class="product-content">
-    <h3>Neurozen (150g)</h3>
-    <p>Supports Overall Well Being</p>
-
-    <div class="price">
-      <span class="old-price">₹600</span>
-      ₹300 (50% OFF)
+    <div class="product-card" onclick="openModal('Green Grid','AddText_05-23-07.17.22.jpg')">
+      <img src="AddText_05-23-03.14.59.jpg">
+      <div class="product-content">
+        <h3>Green Grid (300g)</h3>
+        <p>Nutrient Food</p>
+        <div class="price"><span class="old-price">₹1000</span> ₹500</div>
+        <div class="offer-badge">FREE DELIVERY</div>
+      </div>
     </div>
 
-    <div class="offer-badge">🚚 FREE DELIVERY</div>
-  </div>
-</div>
+    <div class="product-card" onclick="openModal('Refresha','AddText_05-23-06.16.48.jpg')">
+      <img src="AddText_05-23-10.24.48.jpg">
+      <div class="product-content">
+        <h3>Refresha (270g)</h3>
+        <p>Body Cooler Rich in Iron</p>
+        <div class="price"><span class="old-price">₹500</span> ₹250</div>
+      </div>
+    </div>
+
+    <div class="product-card" onclick="openModal('Neurozen','AddText_05-23-06.53.21.jpg')">
+      <img src="AddText_05-23-11.02.20.jpg">
+      <div class="product-content">
+        <h3>Neurozen (150g)</h3>
+        <p>Supports Overall Well Being</p>
+        <div class="price"><span class="old-price">₹600</span> ₹300</div>
+        <div class="offer-badge">FREE DELIVERY</div>
+      </div>
+    </div>
 
   </div>
-</section><section id="about">
-  <h2 class="section-title">About Us</h2>  <p style="text-align:center;max-width:800px;margin:auto;font-size:18px;">
-    Thangam Herbals brings traditional herbal wellness products made with carefully selected natural ingredients. Our mission is to support healthy living through trusted herbal solutions.
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <p style="text-align:center;max-width:800px;margin:auto;font-size:18px;">
+    Thangam Herbals brings traditional herbal wellness products made with natural ingredients.
   </p>
-</section><section id="reviews">
-  <h2 class="section-title">Customer Ratings & Reviews</h2>  <div class="review-box"><h3 style="margin-bottom:15px;text-align:center;">Share Your Experience</h3>
+</section>
 
-<form>
-  <input type="text" placeholder="Your Name">
+<section id="reviews">
+  <h2 class="section-title">Reviews</h2>
 
-  <select>
-    <option>⭐ 1 Star</option>
-    <option>⭐ 2 Stars</option>
-    <option>⭐ 3 Stars</option>
-    <option>⭐ 4 Stars</option>
-    <option selected>⭐ 5 Stars</option>
-  </select>
-
-  <textarea placeholder="Write your review..."></textarea>
-
-  <button type="submit" class="btn">Submit Review</button>
-</form>
-
+  <div class="review-box">
+    <form>
+      <input type="text" placeholder="Your Name">
+      <select>
+        <option>⭐ 1 Star</option>
+        <option>⭐ 2 Stars</option>
+        <option>⭐ 3 Stars</option>
+        <option>⭐ 4 Stars</option>
+        <option selected>⭐ 5 Stars</option>
+      </select>
+      <textarea placeholder="Write review..."></textarea>
+      <button class="btn">Submit</button>
+    </form>
   </div>
-</section><section id="contact">
-  <h2 class="section-title">Contact Us</h2>  <div style="text-align:center;font-size:18px;">
-    <p>📞 WhatsApp Orders: +91 8870420630</p>
-    <p>📧 Email: psthangam1972@gmail.com</p>
-    <p>📍 Tamil Nadu, India</p><br>
+</section>
 
-<a href="https://wa.me/918870420630" class="btn">
-  Order on WhatsApp
-</a>
-
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div style="text-align:center;">
+    <p>📞 +91 8870420630</p>
+    <p>📧 psthangam1972@gmail.com</p>
+    <a href="https://wa.me/918870420630" class="btn">Order on WhatsApp</a>
   </div>
-</section><footer>
-  <p>© 2026 Thangam Herbals | Natural Herbal Wellness</p>
-</footer><div class="modal" id="productModal">  <div class="modal-content"><span class="close" onclick="closeModal()">&times;</span>
+</section>
 
-<img id="detailsImage" src="" alt="Details Image">
+<footer>
+  <p>© 2026 Thangam Herbals</p>
+</footer>
 
-  </div></div><script>
-function openModal(productName,imageName){
+<!-- MODAL -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="detailsImage">
+  </div>
+</div>
 
+<script>
+function openModal(name, img){
   document.getElementById('productModal').style.display='flex';
-
-  document.getElementById('detailsImage').src=imageName;
-
+  document.getElementById('detailsImage').src=img;
 }
 
 function closeModal(){
-
   document.getElementById('productModal').style.display='none';
-
 }
 
-window.onclick=function(event){
-
-  const modal=document.getElementById('productModal');
-
-  if(event.target==modal){
-    modal.style.display='none';
+window.onclick=function(e){
+  if(e.target.id==='productModal'){
+    closeModal();
   }
-
 }
-</script></body>
-  </html>
+</script>
+
+</body>
+      </html>
