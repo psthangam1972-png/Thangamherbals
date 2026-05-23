@@ -1,2 +1,2 @@
 # Thangamherbals
-Natural Herbal Products for Healthy Living
+Herbs For A Healthier Life 
