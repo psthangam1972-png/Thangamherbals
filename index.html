@@ -355,7 +355,6 @@ footer{
         <div class="offer-badge">FREE DELIVERY</div>
       </div>
     </div>
-  <div class="offer-badge">FREE DELIVERY</div>
     <div class="product-card" onclick="openModal('Refresha','AddText_05-23-06.16.48.jpg')">
       <img src="AddText_05-23-10.24.48.jpg">
       <div class="product-content">
@@ -398,7 +397,9 @@ footer{
     <a href="https://wa.me/918870420630?text=I%20want%20Herbal%20Power%20Combo%20₹999" class="btn">
       Order Combo on WhatsApp
     </a>
-
+  <div class="offer-badge" style="background:#2ca02c;margin-top:10px;">
+  🚚 FREE DELIVERY ON COMBO
+</div>
   </div>
 </div>
   </div>
@@ -434,14 +435,29 @@ footer{
   <h2 class="section-title">Contact</h2>
 
   <div style="text-align:center;font-size:18px;line-height:1.8;">
-    
-    <p>📞 WhatsApp / Call: +91 8870420630</p>
-    
-    <p>💳 GPay: <b>8870420630</b></p>
-    
-    <p>UPI ID: <b>senthilvelrcm@okaxis</b></p>
 
-    <p>📧 Email: psthangam1972@gmail.com</p>
+    <p>📞 WhatsApp / Call: +91 8870420630</p>
+
+    <p>
+      💳 GPay (Mobile): <b id="gpay">8870420630</b>
+    </p>
+
+    <button onclick="copyGPay()" class="btn">📋 Copy GPay Number</button>
+
+    <p style="margin-top:15px;">
+      🏦 UPI ID: <b id="upi">senthilvelrcm@okaxis</b>
+    </p>
+
+    <button onclick="copyUPI()" class="btn">📋 Copy UPI ID</button>
+
+    <a 
+      href="upi://pay?pa=senthilvelrcm@okaxis&pn=Thangam%20Herbals"
+      class="btn"
+      style="margin-top:10px;">
+      💳 Pay on GPay
+    </a>
+
+    <p style="margin-top:15px;">📧 Email: psthangam1972@gmail.com</p>
 
     <a href="https://wa.me/918870420630" class="btn">
       Order on WhatsApp
@@ -463,21 +479,17 @@ footer{
 </div>
 
 <script>
-function openModal(name, img){
-  document.getElementById('productModal').style.display='flex';
-  document.getElementById('detailsImage').src=img;
+function copyUPI(){
+  const upi = document.getElementById("upi").innerText;
+  navigator.clipboard.writeText(upi);
+  alert("UPI ID Copied: " + upi);
 }
 
-function closeModal(){
-  document.getElementById('productModal').style.display='none';
-}
-
-window.onclick=function(e){
-  if(e.target.id==='productModal'){
-    closeModal();
-  }
+function copyGPay(){
+  const gpay = document.getElementById("gpay").innerText;
+  navigator.clipboard.writeText(gpay);
+  alert("GPay Number Copied: " + gpay);
 }
 </script>
-
 </body>
       </html>
