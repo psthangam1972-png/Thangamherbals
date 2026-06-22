@@ -480,17 +480,21 @@ footer{
 </div>
 
 <script>
-function copyUPI(){
-  const upi = document.getElementById("upi").innerText;
-  navigator.clipboard.writeText(upi);
-  alert("UPI ID Copied: " + upi);
+function openModal(productName, imageName){
+  document.getElementById('productModal').style.display = 'flex';
+  document.getElementById('detailsImage').src = imageName;
 }
 
-function copyGPay(){
-  const gpay = document.getElementById("gpay").innerText;
-  navigator.clipboard.writeText(gpay);
-  alert("GPay Number Copied: " + gpay);
+function closeModal(){
+  document.getElementById('productModal').style.display = 'none';
 }
+
+window.onclick = function(event){
+  const modal = document.getElementById('productModal');
+  if(event.target == modal){
+    modal.style.display = 'none';
+  }
+  }
                                        </script>
 </body>
       </html>
