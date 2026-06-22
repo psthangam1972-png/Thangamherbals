@@ -501,8 +501,41 @@ footer{
     <img id="detailsImage">
   </div>
 </div>
-
 <script>
+function copyUPI() {
+  const text = document.getElementById("upi").innerText;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text)
+      .then(() => alert("UPI ID Copied: " + text))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function copyGPay() {
+  const text = document.getElementById("gpay").innerText;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text)
+      .then(() => alert("GPay Number Copied: " + text))
+      .catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const temp = document.createElement("textarea");
+  temp.value = text;
+  document.body.appendChild(temp);
+  temp.select();
+  document.execCommand("copy");
+  document.body.removeChild(temp);
+  alert("Copied: " + text);
+}
+
 function openModal(productName, imageName){
   document.getElementById('productModal').style.display = 'flex';
   document.getElementById('detailsImage').src = imageName;
@@ -517,7 +550,8 @@ window.onclick = function(event){
   if(event.target == modal){
     modal.style.display = 'none';
   }
-  }
-                                       </script>
+}
+</script>
+
 </body>
       </html>
