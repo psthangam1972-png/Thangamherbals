@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thangam Herbals</title>
-
 <style>
 *{
   margin:0;
@@ -15,18 +14,19 @@
 
 body{
   background:#f4f9ff;
-  color:#1a2f4a;
+  color:#0f2a44;
 }
 
 /* HEADER */
 header{
-  background:linear-gradient(135deg,#007FFF,#00A3FF);
+  background:#007FFF;
   color:white;
   padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
+  animation: fadeInDown 0.8s ease-out;
 }
 
 header h1{
@@ -46,14 +46,19 @@ nav a{
   width:50px;
   border-radius:10px;
   object-fit:contain;
+  animation: logoZoom 1s ease-out;
+}
+
+/* BRAND TEXT */
+.brand-title{
+  animation: fadeInLeft 1s ease-out;
 }
 
 /* HERO */
 .hero{
   height:80vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-    url('rustic-culinary-herb-arrangement-slate-blue-background-with-organic-greens-herbal_996993-54841.jpg');
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -64,10 +69,19 @@ nav a{
   padding:20px;
 }
 
-/* BUTTON */
+.hero-content h2{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
 .btn{
   display:inline-block;
-  background:linear-gradient(135deg,#007FFF,#00A3FF);
+  background:#007FFF;
   color:white;
   padding:12px 24px;
   border-radius:8px;
@@ -107,6 +121,7 @@ section{
   transition:0.3s;
   cursor:pointer;
   text-align:center;
+  padding-bottom:15px;
 }
 
 .product-card:hover{
@@ -146,14 +161,51 @@ section{
   font-size:14px;
 }
 
-/* REVIEW */
-.review-box{
+/* PRODUCT ACTION BUTTONS */
+.product-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.action-icon-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.action-icon-btn:hover {
+  opacity: 0.9;
+}
+
+.btn-wa { background: #25D366; }
+.btn-call { background: #007FFF; }
+
+/* REVIEWS & BOX SCHEMES */
+.box, .review-box, .dot-box {
   background:white;
   padding:25px;
   border-radius:15px;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
   max-width:600px;
   margin:auto;
+  text-align:center;
+}
+
+/* DOT BOX ESPECIFIC DEFINITION */
+.dot-box {
+  border: 2px dashed #007FFF;
+  background: #fbfdff;
 }
 
 .review-box input,
@@ -166,9 +218,13 @@ section{
   border:1px solid #ccc;
 }
 
+.review-box textarea{
+  height:120px;
+}
+
 /* FOOTER */
 footer{
-  background:linear-gradient(135deg,#007FFF,#00A3FF);
+  background:#007FFF;
   color:white;
   text-align:center;
   padding:20px;
@@ -195,13 +251,19 @@ footer{
   width:100%;
   max-width:500px;
   border-radius:20px;
-  padding:15px;
+  padding:20px;
+  position:relative;
+  animation: popup 0.3s ease;
+  text-align:center;
 }
 
 .modal-content img{
-  width:75%;
-  display:block;
+  width:85%;
+  max-height:55vh;
+  object-fit:contain;
   margin:auto;
+  display:block;
+  border-radius:15px;
 }
 
 .close{
@@ -212,179 +274,283 @@ footer{
   cursor:pointer;
 }
 
+/* ANIMATIONS */
+@keyframes logoZoom{
+  from{ transform:scale(0.3); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+@keyframes fadeInDown{
+  from{ transform:translateY(-30px); opacity:0; }
+  to{ transform:translateY(0); opacity:1; }
+}
+@keyframes fadeInLeft{
+  from{ transform:translateX(-20px); opacity:0; }
+  to{ transform:translateX(0); opacity:1; }
+}
+@keyframes popup{
+  from{ transform:scale(0.7); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+
 /* MOBILE */
 @media(max-width:768px){
-  .hero-content h2{
-    font-size:32px;
-  }
-
-  nav a{
-    margin:0 10px;
-  }
+  .hero-content h2{ font-size:32px; }
+  nav{ margin-top:10px; }
+  nav a{ margin:0 10px; }
 }
 </style>
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-  <div style="display:flex;align-items:center;gap:10px;">
-    <img class="logo" src="1781721094717.png">
-    <h1>Thangam Herbals 🌿</h1>
+  <div style="display:flex;align-items:center;gap:10px;">      
+    <img class="logo" src="1781721094717.png" alt="Thangam Herbals Logo" loading="eager" fetchpriority="high">      
+    <h1 class="brand-title">Thangam Herbals🌿</h1>      
   </div>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <nav>      
+    <a href="#home">Home</a>      
+    <a href="#products">Products</a>      
+    <a href="#about">About</a>      
+    <a href="#reviews">Reviews</a>      
+    <a href="#contact">Contact</a>      
+    <a href="#dealer">Dealer</a>      
+  </nav>      
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h2>Natural Herbal Wellness</h2>
-    <p>Pure Herbal Products for a Healthy Life</p>
-    <a href="#products" class="btn">Explore Products</a>
-  </div>
+<!-- HERO -->
+<section class="hero" id="home">      
+  <div class="hero-content">      
+    <h2>Natural Herbal Wellness</h2>      
+    <p>Pure Herbal Products for a Healthy Life</p>      
+    <p style="font-size: 16px; opacity: 0.9;">Traditional Wellness • Natural Ingredients • Trusted Quality</p>      
+    <a href="#products" class="btn">Explore Products</a>      
+  </div>      
 </section>
 
-<section id="products">
+<!-- PRODUCTS -->
+<section id="products">      
   <h2 class="section-title">Our Products</h2>
-
   <div class="products">
-
-    <!-- CORE VITAL -->
-    <div class="product-card">
-      <img src="AddText_05-22-02.59.41.jpg">
-      <div class="product-content">
-        <h3>Core Vital</h3>
-        <p>Detox Health Drink</p>
-        <div class="price"><span class="old-price">₹1000</span> ₹500</div>
-        <div class="offer-badge">FREE DELIVERY</div>
+    
+    <!-- 1 -->
+    <div class="product-card" onclick="openModal('Core Vital','Corevital.png')">      
+      <img src="AddText_05-22-02.59.41.jpg" alt="Core Vital">      
+      <div class="product-content">      
+        <h3>Core Vital (180g)</h3>      
+        <p>Detox Health Drink</p>      
+        <div class="price"><span class="old-price">₹1000</span> ₹500</div>      
+        <div class="offer-badge">FREE DELIVERY</div>      
+      </div>
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20Core%20Vital%20(180g)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
       </div>
     </div>
 
-    <!-- NUTRA NEST -->
-    <div class="product-card">
-      <img src="AddText_05-23-10.11.01.jpg">
-      <div class="product-content">
-        <h3>Nutra Nest</h3>
-        <p>Protein Flour</p>
-        <div class="price"><span class="old-price">₹200</span> ₹100</div>
+    <!-- 2 -->
+    <div class="product-card" onclick="openModal('Nutra Nest','AddText_05-23-07.29.55.jpg')">      
+      <img src="AddText_05-23-10.11.01.jpg" alt="Nutra Nest">      
+      <div class="product-content">      
+        <h3>Nutra Nest (300g)</h3>      
+        <p>Protein Flour</p>      
+        <div class="price"><span class="old-price">₹200</span> ₹100</div>      
+      </div>      
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20Nutra%20Nest%20(300g)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
       </div>
     </div>
 
-    <!-- GREEN GRID -->
-    <div class="product-card">
-      <img src="AddText_05-23-03.14.59.jpg">
-      <div class="product-content">
-        <h3>Green Grid</h3>
-        <p>Nutrient Food</p>
-        <div class="price"><span class="old-price">₹1000</span> ₹500</div>
-        <div class="offer-badge">FREE DELIVERY</div>
+    <!-- 3 -->
+    <div class="product-card" onclick="openModal('Green Grid','AddText_05-23-09.37.42.jpg')">      
+      <img src="AddText_05-23-03.14.59.jpg" alt="Green Grid">      
+      <div class="product-content">      
+        <h3>Green Grid (300g)</h3>      
+        <p>Nutrient Food</p>      
+        <div class="price"><span class="old-price">₹1000</span> ₹500</div>      
+        <div class="offer-badge">FREE DELIVERY</div>      
+      </div>      
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20Green%20Grid%20(300g)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
+      </div>
+    </div>      
+
+    <!-- 4 -->
+    <div class="product-card" onclick="openModal('Refresha','AddText_05-23-06.16.48.jpg')">      
+      <img src="AddText_05-23-10.24.48.jpg" alt="Refresha">      
+      <div class="product-content">      
+        <h3>Refresha (270g)</h3>      
+        <p>Body Cooler Rich in Iron</p>      
+        <div class="price"><span class="old-price">₹500</span> ₹250</div>      
+      </div>      
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20Refresha%20(270g)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
       </div>
     </div>
 
-    <!-- REFRESHA -->
-    <div class="product-card">
-      <img src="AddText_05-23-10.24.48.jpg">
-      <div class="product-content">
-        <h3>Refresha</h3>
-        <p>Body Cooler</p>
-        <div class="price"><span class="old-price">₹500</span> ₹250</div>
+    <!-- 5 -->
+    <div class="product-card" onclick="openModal('Neurozen','AddText_05-23-06.53.21.jpg')">      
+      <img src="AddText_05-23-11.02.20.jpg" alt="Neurozen">      
+      <div class="product-content">      
+        <h3>Neurozen (150g)</h3>      
+        <p>Supports Overall Well Being</p>      
+        <div class="price"><span class="old-price">₹800</span> ₹400</div>      
+        <div class="offer-badge">FREE DELIVERY</div>      
+      </div>      
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20Neurozen%20(150g)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
       </div>
-    </div>
+    </div>    
 
-    <!-- NEUROZEN -->
-    <div class="product-card">
-      <img src="AddText_05-23-11.02.20.jpg">
-      <div class="product-content">
-        <h3>Neurozen</h3>
-        <p>Wellness Support</p>
-        <div class="price"><span class="old-price">₹800</span> ₹400</div>
-        <div class="offer-badge">FREE DELIVERY</div>
-      </div>
-    </div>
-
-    <!-- VATAHARI VATI -->
-    <div class="product-card">
-      <img src="VATAHARI VATI.png">
-      <div class="product-content">
-        <h3>VATAHARI VATI</h3>
-        <p>Joint & Body Support</p>
-        <div class="price"><span class="old-price">₹1200</span> ₹600</div>
-        <div class="offer-badge">50% OFF</div>
+    <!-- 6 -->
+    <div class="product-card" onclick="openModal('VATAHARI VATI','VATAHARI VATI details.png')">    
+      <img src="VATAHARI VATI.png" alt="Vatahari Vati">
+      <div class="product-content">    
+        <h3>VATAHARI VATI (60 Tablets)</h3>
+        <p>Supports Joint, Muscle & Body Comfort</p>    
+        <div class="price"><span class="old-price">₹1200</span> ₹600</div>    
+        <div class="offer-badge" style="background:#ff3b30;">🔥 50% OFF</div>    
+        <div class="offer-badge" style="margin-top:8px;">🚚 FREE DELIVERY</div>
+      </div>    
+      <div class="product-actions" onclick="event.stopPropagation();">
+        <a href="https://wa.me/918870420630?text=I%20want%20VATAHARI%20VATI%20(60%20Tablets)" target="_blank" class="action-icon-btn btn-wa">💬 Order on WhatsApp</a>
       </div>
     </div>
 
   </div>
-</section>
 
-<section id="reviews">
-  <h2 class="section-title">Reviews</h2>
+  <!-- COMBO OFFER -->
+  <h2 class="section-title" style="margin-top: 60px;">Combo Offer</h2>  
+  <div style="display:flex;justify-content:center;">      
+    <div class="dot-box" style="width:100%;max-width:400px;">  
+      <h3 style="color:#007FFF;font-size:24px;margin-bottom:10px;">Herbal Power Combo</h3>
+      <p style="font-size:16px;line-height:1.8;">      
+        CORE VITAL — ₹500<br>      
+        GREEN GRID — ₹500<br>      
+        NUTRA NEST — ₹200<br>      
+      </p>      
+      <div style="margin:15px 0;font-size:18px;">      
+        <span style="text-decoration:line-through;color:gray;">Total ₹1200</span><br>      
+        <span style="font-size:26px;font-weight:bold;color:#007FFF;">₹999/-</span>      
+      </div>      
+      <div class="offer-badge" style="margin-bottom:15px; background:#ff9500;">🔥 COMBO OFFER</div><br>
+      
+      <div style="display:flex; gap:10px; justify-content:center;">
+        <a href="https://wa.me/918870420630?text=I%20want%20Herbal%20Power%20Combo%20%E2%82%B9999" target="_blank" class="action-icon-btn btn-wa" style="margin-top:20px; flex:initial; padding:12px 20px;">💬 Order Combo</a>
+      </div>
+      
+      <div class="offer-badge" style="margin-top:15px; display:block;">🚚 FREE DELIVERY ON COMBO</div>      
+    </div>      
+  </div>      
+</section>  
 
-  <div class="review-box">
-    <input id="name" placeholder="Your Name">
-    <select id="rating">
-      <option>⭐ 1 Star</option>
-      <option>⭐ 2 Stars</option>
-      <option>⭐ 3 Stars</option>
-       <option>⭐4 Stars</option>
-      <option selected>⭐ 5 Stars</option>
-    </select>
-    <textarea id="comment" placeholder="Write review..."></textarea>
-    <button class="btn" onclick="addReview()">Submit</button>
+<!-- ABOUT -->
+<section id="about">      
+  <h2 class="section-title">About Us</h2>      
+  <p style="text-align:center;max-width:800px;margin:auto;font-size:18px;line-height:1.6;">      
+    Thangam Herbals brings traditional herbal wellness products made with natural ingredients. We focus on providing high-quality solutions to build modern immunity and restore comprehensive natural health.
+  </p>      
+</section>  
+
+<!-- REVIEWS -->
+<section id="reviews">      
+  <h2 class="section-title">Reviews</h2>    
+  <div class="review-box">      
+    <form onsubmit="event.preventDefault(); alert('Thank you for your review!');">      
+      <input type="text" placeholder="Your Name" required>      
+      <select>      
+        <option>⭐ 1 Star</option>      
+        <option>⭐ 2 Stars</option>      
+        <option>⭐ 3 Stars</option>      
+        <option>⭐ 4 Stars</option>      
+        <option selected>⭐ 5 Stars</option>      
+      </select>      
+      <textarea placeholder="Write review..." required></textarea>      
+      <button type="submit" class="btn">Submit</button>      
+    </form>      
+  </div>      
+</section>      
+
+<!-- FSSAI -->
+<section id="fssai">      
+  <h2 class="section-title">FSSAI Certification</h2>    
+  <div style="background:white;padding:25px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:700px;margin:auto;text-align:center;">  
+    <p style="font-size:22px;color:#007FFF;font-weight:bold;">✅ FSSAI Registered</p>      
+    <p style="font-size:18px;margin-top:10px;">Registration Number: <strong>22426562000070</strong></p>      
+    <img src="AddText_06-18-06.26.06.jpg" alt="FSSAI Certificate" style="width:100%;max-width:500px;margin-top:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"> 
+    <br><br>
+    <a href="AddText_06-18-06.26.06.jpg" target="_blank" class="btn">📜 View Full Certificate</a>      
+  </div>      
+</section>      
+
+<!-- CONTACT -->
+<section id="contact">      
+  <h2 class="section-title">Contact</h2>    
+  <div class="box" style="line-height:1.8; font-size:18px;">  
+    <p>📞 WhatsApp / Call: +91 8870420630</p>      
+    <p>💳 GPay (Mobile): <b id="gpay">8870420630</b></p>      
+    <button onclick="copyText('gpay')" class="btn" style="margin-top:5px; padding:6px 15px;">📋 Copy GPay Number</button>
+    <p style="margin-top:15px;">🏦 UPI ID: <b id="upi">senthilvelrcm@okaxis</b></p>      
+    <button onclick="copyText('upi')" class="btn" style="margin-top:5px; padding:6px 15px;">📋 Copy UPI ID</button>
+    <p style="margin-top:15px;">📧 Email: psthangam1972@gmail.com</p>      
+    
+    <div style="display:flex; gap:10px; justify-content:center;">
+      <a href="https://wa.me/918870420630" target="_blank" class="action-icon-btn btn-wa" style="margin-top:15px; flex:initial; padding:12px 24px;">💬 WhatsApp</a>    
+      <a href="tel:+918870420630" class="action-icon-btn btn-call" style="margin-top:15px; flex:initial; padding:12px 24px;">📞 Tap to Call</a>
+    </div>
   </div>
-
-  <div id="reviewList"></div>
 </section>
 
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <div style="text-align:center;">
-    <p>📞 8870420630</p>
-    <p>📧 psthangam1972@gmail.com</p>
-    <a class="btn" href="https://wa.me/918870420630">WhatsApp Order</a>
+<!-- DEALER / DISTRIBUTOR -->
+<section id="dealer">      
+  <h2 class="section-title">Become a Dealer</h2>    
+  <div class="box">
+    <p style="font-size:18px; margin-bottom:15px;">Grow your business with us! Partner with Thangam Herbals and distribute trusted organic wellness alternatives within your locality.</p>
+    <a href="https://wa.me/918870420630?text=I%20am%20interested%20in%20becoming%20a%20dealer" target="_blank" class="btn">💼 Apply Now</a>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © 2026 Thangam Herbals 🌿
 </footer>
 
+<!-- MODAL COMPONENT -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modalTitle" style="color:#007FFF; margin-bottom:15px;"></h3>
+    <img id="modalImage" src="" alt="Product Detail">
+  </div>
+</div>
+
+<!-- SCRIPTS -->
 <script>
-function addReview(){
-  let name=document.getElementById("name").value;
-  let rating=document.getElementById("rating").value;
-  let comment=document.getElementById("comment").value;
+function copyText(id) {
+  var text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    alert("Copied to clipboard: " + text);
+  }).catch(function() {
+    alert("Failed to copy text.");
+  });
+}
 
-  if(name=="" || comment==""){
-    alert("Fill all fields");
-    return;
+function openModal(title, imageSrc) {
+  document.getElementById("modalTitle").innerText = title;
+  document.getElementById("modalImage").src = imageSrc;
+  document.getElementById("productModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("productModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  var modal = document.getElementById("productModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-
-  let div=document.createElement("div");
-  div.style.background="white";
-  div.style.padding="15px";
-  div.style.margin="15px auto";
-  div.style.borderRadius="12px";
-  div.style.maxWidth="600px";
-  div.style.boxShadow="0 4px 10px rgba(0,0,0,0.1)";
-
-  div.innerHTML=`
-    <h3 style="color:#007FFF">${name}</h3>
-    <p>${rating}</p>
-    <p>${comment}</p>
-  `;
-
-  document.getElementById("reviewList").appendChild(div);
-
-  document.getElementById("name").value="";
-  document.getElementById("comment").value="";
 }
 </script>
 
 </body>
-                             </html>
+  </html>
