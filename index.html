@@ -14,20 +14,19 @@
 }
 
 body{
-  background:#f4fff4;
-  color:#1f3d1f;
+  background:#f4f9ff;
+  color:#1a2f4a;
 }
 
 /* HEADER */
 header{
-  background:#1f7a1f;
+  background:#007FFF;
   color:white;
   padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
-  animation: fadeInDown 0.8s ease-out;
 }
 
 header h1{
@@ -47,12 +46,6 @@ nav a{
   width:50px;
   border-radius:10px;
   object-fit:contain;
-  animation: logoZoom 1s ease-out;
-}
-
-/* BRAND TEXT */
-.brand-title{
-  animation: fadeInLeft 1s ease-out;
 }
 
 /* HERO */
@@ -80,9 +73,10 @@ nav a{
   margin-bottom:10px;
 }
 
+/* BUTTON */
 .btn{
   display:inline-block;
-  background:#2ca02c;
+  background:#007FFF;
   color:white;
   padding:12px 24px;
   border-radius:8px;
@@ -102,7 +96,7 @@ section{
   text-align:center;
   margin-bottom:40px;
   font-size:36px;
-  color:#1f7a1f;
+  color:#007FFF;
 }
 
 /* PRODUCTS */
@@ -140,7 +134,7 @@ section{
 .price{
   margin-top:8px;
   font-weight:bold;
-  color:#1f7a1f;
+  color:#007FFF;
 }
 
 .old-price{
@@ -150,7 +144,7 @@ section{
 }
 
 .offer-badge{
-  background:#1f7a1f;
+  background:#007FFF;
   color:white;
   display:inline-block;
   padding:5px 12px;
@@ -185,7 +179,7 @@ section{
 
 /* FOOTER */
 footer{
-  background:#1f7a1f;
+  background:#007FFF;
   color:white;
   text-align:center;
   padding:20px;
@@ -214,7 +208,6 @@ footer{
   border-radius:20px;
   padding:15px;
   position:relative;
-  animation: popup 0.3s ease;
 }
 
 .modal-content img{
@@ -232,51 +225,6 @@ footer{
   top:10px;
   font-size:32px;
   cursor:pointer;
-}
-
-/* ANIMATIONS */
-@keyframes logoZoom{
-  from{
-    transform:scale(0.3);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
-}
-
-@keyframes fadeInDown{
-  from{
-    transform:translateY(-30px);
-    opacity:0;
-  }
-  to{
-    transform:translateY(0);
-    opacity:1;
-  }
-}
-
-@keyframes fadeInLeft{
-  from{
-    transform:translateX(-20px);
-    opacity:0;
-  }
-  to{
-    transform:translateX(0);
-    opacity:1;
-  }
-}
-
-@keyframes popup{
-  from{
-    transform:scale(0.7);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
 }
 
 /* MOBILE */
@@ -300,12 +248,8 @@ footer{
 
 <header>
   <div style="display:flex;align-items:center;gap:10px;">
-<img class="logo"
-     src="1781721094717.png"
-     alt="Thangam Herbals Logo"
-     loading="eager"
-     fetchpriority="high">
-    <h1 class="brand-title">Thangam Herbals🌿</h1>
+    <img class="logo" src="1781721094717.png" alt="Logo">
+    <h1>Thangam Herbals🌿</h1>
   </div>
 
   <nav>
@@ -321,7 +265,6 @@ footer{
   <div class="hero-content">
     <h2>Natural Herbal Wellness</h2>
     <p>Pure Herbal Products for a Healthy Life</p>
-    <p>Traditional Wellness • Natural Ingredients • Trusted Quality</p>
     <a href="#products" class="btn">Explore Products</a>
   </div>
 </section>
@@ -329,290 +272,59 @@ footer{
 <section id="products">
   <h2 class="section-title">Our Products</h2>
 
-  <div class="products"> 
+  <div class="products">
 
-    <div class="product-card" onclick="openModal('Core Vital','AddText_05-23-02.57.56.jpg')">
+    <div class="product-card">
       <img src="Corevital.png">
       <div class="product-content">
-        <h3>Core Vital (180g)</h3>
-        <p>Detox Health Drink</p>
+        <h3>Core Vital</h3>
         <div class="price"><span class="old-price">₹1000</span> ₹500</div>
         <div class="offer-badge">FREE DELIVERY</div>
       </div>
     </div>
 
-    <div class="product-card" onclick="openModal('Nutra Nest','AddText_05-23-07.29.55.jpg')">
+    <div class="product-card">
       <img src="AddText_05-23-10.11.01.jpg">
       <div class="product-content">
-        <h3>Nutra Nest (300g)</h3>
-        <p>Protein Flour</p>
+        <h3>Nutra Nest</h3>
         <div class="price"><span class="old-price">₹200</span> ₹100</div>
       </div>
     </div>
 
-    <div class="product-card" onclick="openModal('Green Grid','AddText_05-23-09.37.42.jpg')">
+    <div class="product-card">
       <img src="AddText_05-23-03.14.59.jpg">
       <div class="product-content">
-        <h3>Green Grid (300g)</h3>
-        <p>Nutrient Food</p>
+        <h3>Green Grid</h3>
         <div class="price"><span class="old-price">₹1000</span> ₹500</div>
         <div class="offer-badge">FREE DELIVERY</div>
       </div>
     </div>
-    <div class="product-card" onclick="openModal('Refresha','AddText_05-23-06.16.48.jpg')">
-      <img src="AddText_05-23-10.24.48.jpg">
-      <div class="product-content">
-        <h3>Refresha (270g)</h3>
-        <p>Body Cooler Rich in Iron</p>
-        <div class="price"><span class="old-price">₹500</span> ₹250</div>
-      </div>
-    </div>
 
-    <div class="product-card" onclick="openModal('Neurozen','AddText_05-23-06.53.21.jpg')">
-      <img src="AddText_05-23-11.02.20.jpg">
-      <div class="product-content">
-        <h3>Neurozen (150g)</h3>
-        <p>Supports Overall Well Being</p>
-        <div class="price"><span class="old-price">₹800</span> ₹400</div>
-        <div class="offer-badge">FREE DELIVERY</div>
-      </div>
-    </div>
-<div class="product-card" onclick="openModal('Neurozen','AddText_05-23-06.53.21.jpg')">
-  ...
-</div>
-
-<!-- ADD VATAHARI VATI HERE -->
-
-<div class="product-card" onclick="openModal('VATAHARI VATI','VATAHARI VATI details.png')">
-  <img src="VATAHARI VATI.png">
-  <div class="product-content">
-    <h3>VATAHARI VATI (30 Tablets)</h3>
-    <p>Helps Maintain Joint Mobility & Comfort</p>
-
-    <div class="price">
-      <span class="old-price">₹1200</span> ₹600
-    </div>
-    <div class="offer-badge">🔥 50% OFF</div>
-<div class="offer-badge" style="margin-top:8px;background:#2ca02c;">
-  🚚 FREE DELIVERY
-</div>
-
-
-    
-<div style="display:flex;justify-content:center;margin-top:20px;">
-  <div style="background:white;padding:25px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:400px;text-align:center;">
-
-    <h3 style="color:#1f7a1f;font-size:24px;margin-bottom:10px;">Herbal Power Combo</h3>
-
-    <p style="font-size:16px;line-height:1.8;">
-      CORE VITAL — ₹500<br>
-      GREEN GRID — ₹500<br>
-      NUTRA NEST — ₹200<br>
-    </p>
-
-    <div style="margin:15px 0;font-size:18px;">
-      <span style="text-decoration:line-through;color:gray;">Total ₹1200</span>
-      <br>
-      <span style="font-size:26px;font-weight:bold;color:#1f7a1f;">₹999/-</span>
-    </div>
-
-    <div class="offer-badge" style="margin-bottom:15px;">🔥 COMBO OFFER</div>
-
-    <a href="https://wa.me/918870420630?text=I%20want%20Herbal%20Power%20Combo%20₹999" class="btn">
-      Order Combo on WhatsApp
-    </a>
-  <div class="offer-badge" style="background:#2ca02c;margin-top:10px;">
-  🚚 FREE DELIVERY ON COMBO
-</div>
-  </div>
-</div>
   </div>
 </section>
 
 <section id="about">
   <h2 class="section-title">About Us</h2>
-  <p style="text-align:center;max-width:800px;margin:auto;font-size:18px;">
-    Thangam Herbals brings traditional herbal wellness products made with natural ingredients.
-  </p>
+  <p style="text-align:center;">Thangam Herbals provides natural wellness products.</p>
 </section>
 
 <section id="reviews">
   <h2 class="section-title">Reviews</h2>
 
   <div class="review-box">
-    <form>
-      <input type="text" placeholder="Your Name">
-      <select>
-        <option>⭐ 1 Star</option>
-        <option>⭐ 2 Stars</option>
-        <option>⭐ 3 Stars</option>
-        <option>⭐ 4 Stars</option>
-        <option selected>⭐ 5 Stars</option>
-      </select>
-      <textarea placeholder="Write review..."></textarea>
-      <button class="btn">Submit</button>
-    </form>
-  </div>
-</section>
-<section id="fssai">
-  <h2 class="section-title">FSSAI Certification</h2>
-
-  <div style="background:white;padding:25px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:700px;margin:auto;text-align:center;">
-
-    <p style="font-size:22px;color:#1f7a1f;font-weight:bold;">
-      ✅ FSSAI Registered
-    </p>
-
-    <p style="font-size:18px;margin-top:10px;">
-      Registration Number:
-      <strong>22426562000070</strong>
-    </p>
-
-    <img
-      src="AddText_06-18-06.26.06.jpg"
-      alt="FSSAI Certificate"
-      style="width:100%;max-width:500px;margin-top:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"
-    >
-
-    <br><br>
-
-    <a href="AddText_06-18-06.26.06.jpg" target="_blank" class="btn">
-      📜 View Full Certificate
-    </a>
-
-  </div>
-</section>
-<section id="contact">
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-
-  <div style="text-align:center;font-size:18px;line-height:1.8;">
-
-    <p>📞 WhatsApp / Call: +91 8870420630</p>
-
-    <p>
-      💳 GPay (Mobile): <b id="gpay">8870420630</b>
-    </p>
-
-    <button onclick="copyGPay()" class="btn">📋 Copy GPay Number</button>
-
-    <p style="margin-top:15px;">
-      🏦 UPI ID: <b id="upi">senthilvelrcm@okaxis</b>
-    </p>
-
-    <button onclick="copyUPI()" class="btn">📋 Copy UPI ID</button>
-
-    <p style="margin-top:15px;">📧 Email: psthangam1972@gmail.com</p>
-
-    <a href="https://wa.me/918870420630" class="btn">
-      Order on WhatsApp
-    </a>
-</section> <!-- End of FSSAI Section -->
-
-<!-- DEALER / DISTRIBUTOR SECTION HERE -->
-
-<section id="dealer">
-  <h2 class="section-title">Become a Dealer / Distributor</h2>
-
-  <div style="background:white;padding:25px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);max-width:700px;margin:auto;text-align:center;">
-
-    <h3 style="color:#1f7a1f;">Wholesale & Retail Business Opportunities</h3>
-
-    <p style="margin-top:15px;">
-      Interested in selling Thangam Herbals products in your area?
-    </p>
-
-    <p>
-      Contact us for Dealer, Distributor and Retailer pricing.
-    </p>
-
-    <p>
-      📞 Phone / WhatsApp: <strong>+91 8870420630</strong>
-    </p>
-
-    <p>
-      📧 Email: <strong>psthangam1972@gmail.com</strong>
-    </p>
-
-    <a href="https://wa.me/918870420630?text=I%20am%20interested%20in%20becoming%20a%20dealer%20for%20Thangam%20Herbals"
-       class="btn">
-      Become a Dealer
-    </a>
-
-  </div>
-</section>
-
-<!-- CONTACT SECTION STARTS HERE -->
-
-<section id="contact">
+    <input placeholder="Your Name">
+    <select>
+      <option>5 Star</option>
+      <option>4 Star</option>
+    </select>
+    <textarea placeholder="Write review..."></textarea>
+    <button class="btn">Submit</button>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Thangam Herbals🌿</p>
-<p style="margin-top:8px;">
-  ✅ FSSAI Registration No: 22426562000070
-</p>
+  © 2026 Thangam Herbals🌿
 </footer>
 
-<!-- MODAL -->
-<div class="modal" id="productModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="detailsImage">
-  </div>
-</div>
-<script>
-function copyUPI() {
-  const text = document.getElementById("upi").innerText;
-
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-      .then(() => alert("UPI ID Copied: " + text))
-      .catch(() => fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-}
-
-function copyGPay() {
-  const text = document.getElementById("gpay").innerText;
-
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-      .then(() => alert("GPay Number Copied: " + text))
-      .catch(() => fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-}
-
-function fallbackCopy(text) {
-  const temp = document.createElement("textarea");
-  temp.value = text;
-  document.body.appendChild(temp);
-  temp.select();
-  document.execCommand("copy");
-  document.body.removeChild(temp);
-  alert("Copied: " + text);
-}
-
-function openModal(productName, imageName){
-  document.getElementById('productModal').style.display = 'flex';
-  document.getElementById('detailsImage').src = imageName;
-}
-
-function closeModal(){
-  document.getElementById('productModal').style.display = 'none';
-}
-
-window.onclick = function(event){
-  const modal = document.getElementById('productModal');
-  if(event.target == modal){
-    modal.style.display = 'none';
-  }
-}
-</script>
-
 </body>
-      </html>
+  </html>
