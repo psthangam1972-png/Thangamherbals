@@ -20,7 +20,7 @@ body{
 
 /* HEADER */
 header{
-  background:#007FFF;
+  background:linear-gradient(135deg,#007FFF,#00A3FF);
   color:white;
   padding:20px;
   display:flex;
@@ -52,8 +52,8 @@ nav a{
 .hero{
   height:80vh;
   background:
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url('rustic-culinary-herb-arrangement-slate-blue-background-with-organic-greens-herbal_996993-54841.jpg'); /* 🔴 PUT YOUR DOWNLOADED IMAGE NAME HERE */
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url('your-background-image.jpg');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -64,19 +64,10 @@ nav a{
   padding:20px;
 }
 
-.hero-content h2{
-  font-size:45px;
-  margin-bottom:15px;
-}
-
-.hero-content p{
-  font-size:20px;
-}
-
 /* BUTTON */
 .btn{
   display:inline-block;
-  background:#007FFF;
+  background:linear-gradient(135deg,#007FFF,#00A3FF);
   color:white;
   padding:12px 24px;
   border-radius:8px;
@@ -114,6 +105,7 @@ section{
   overflow:hidden;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
   transition:0.3s;
+  cursor:pointer;
   text-align:center;
 }
 
@@ -174,27 +166,56 @@ section{
   border:1px solid #ccc;
 }
 
-.review-box textarea{
-  height:120px;
-}
-
 /* FOOTER */
 footer{
-  background:#007FFF;
+  background:linear-gradient(135deg,#007FFF,#00A3FF);
   color:white;
   text-align:center;
   padding:20px;
   margin-top:40px;
 }
 
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  z-index:999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-content{
+  background:white;
+  width:100%;
+  max-width:500px;
+  border-radius:20px;
+  padding:15px;
+}
+
+.modal-content img{
+  width:75%;
+  display:block;
+  margin:auto;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:32px;
+  cursor:pointer;
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .hero-content h2{
     font-size:32px;
-  }
-
-  nav{
-    margin-top:10px;
   }
 
   nav a{
@@ -224,7 +245,7 @@ footer{
 <section class="hero" id="home">
   <div class="hero-content">
     <h2>Natural Herbal Wellness</h2>
-    <p>Pure Herbal Products for Healthy Life</p>
+    <p>Pure Herbal Products for a Healthy Life</p>
     <a href="#products" class="btn">Explore Products</a>
   </div>
 </section>
@@ -234,53 +255,97 @@ footer{
 
   <div class="products">
 
+    <!-- CORE VITAL -->
     <div class="product-card">
-      <img src="Corevital.png">
+      <img src="AddText_05-22-02.59.41.jpg">
       <div class="product-content">
         <h3>Core Vital</h3>
+        <p>Detox Health Drink</p>
         <div class="price"><span class="old-price">₹1000</span> ₹500</div>
         <div class="offer-badge">FREE DELIVERY</div>
       </div>
     </div>
 
+    <!-- NUTRA NEST -->
     <div class="product-card">
       <img src="AddText_05-23-10.11.01.jpg">
       <div class="product-content">
         <h3>Nutra Nest</h3>
+        <p>Protein Flour</p>
         <div class="price"><span class="old-price">₹200</span> ₹100</div>
       </div>
     </div>
 
+    <!-- GREEN GRID -->
     <div class="product-card">
       <img src="AddText_05-23-03.14.59.jpg">
       <div class="product-content">
         <h3>Green Grid</h3>
+        <p>Nutrient Food</p>
         <div class="price"><span class="old-price">₹1000</span> ₹500</div>
         <div class="offer-badge">FREE DELIVERY</div>
+      </div>
+    </div>
+
+    <!-- REFRESHA -->
+    <div class="product-card">
+      <img src="AddText_05-23-10.24.48.jpg">
+      <div class="product-content">
+        <h3>Refresha</h3>
+        <p>Body Cooler</p>
+        <div class="price"><span class="old-price">₹500</span> ₹250</div>
+      </div>
+    </div>
+
+    <!-- NEUROZEN -->
+    <div class="product-card">
+      <img src="AddText_05-23-11.02.20.jpg">
+      <div class="product-content">
+        <h3>Neurozen</h3>
+        <p>Wellness Support</p>
+        <div class="price"><span class="old-price">₹800</span> ₹400</div>
+        <div class="offer-badge">FREE DELIVERY</div>
+      </div>
+    </div>
+
+    <!-- VATAHARI VATI -->
+    <div class="product-card">
+      <img src="VATAHARI VATI.png">
+      <div class="product-content">
+        <h3>VATAHARI VATI</h3>
+        <p>Joint & Body Support</p>
+        <div class="price"><span class="old-price">₹1200</span> ₹600</div>
+        <div class="offer-badge">50% OFF</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<section id="about">
-  <h2 class="section-title">About Us</h2>
-  <p style="text-align:center;">
-    Thangam Herbals offers natural wellness herbal products.
-  </p>
-</section>
-
 <section id="reviews">
   <h2 class="section-title">Reviews</h2>
 
   <div class="review-box">
-    <input placeholder="Your Name">
-    <select>
-      <option>5 Star</option>
-      <option>4 Star</option>
+    <input id="name" placeholder="Your Name">
+    <select id="rating">
+      <option>⭐ 1 Star</option>
+      <option>⭐ 2 Stars</option>
+      <option>⭐ 3 Stars</option>
+      <option selected>⭐ 5 Stars</option>
     </select>
-    <textarea placeholder="Write review..."></textarea>
-    <button class="btn">Submit</button>
+    <textarea id="comment" placeholder="Write review..."></textarea>
+    <button class="btn" onclick="addReview()">Submit</button>
+  </div>
+
+  <div id="reviewList"></div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div style="text-align:center;">
+    <p>📞 8870420630</p>
+    <p>📧 psthangam1972@gmail.com</p>
+    <a class="btn" href="https://wa.me/918870420630">WhatsApp Order</a>
   </div>
 </section>
 
@@ -288,5 +353,37 @@ footer{
   © 2026 Thangam Herbals 🌿
 </footer>
 
+<script>
+function addReview(){
+  let name=document.getElementById("name").value;
+  let rating=document.getElementById("rating").value;
+  let comment=document.getElementById("comment").value;
+
+  if(name=="" || comment==""){
+    alert("Fill all fields");
+    return;
+  }
+
+  let div=document.createElement("div");
+  div.style.background="white";
+  div.style.padding="15px";
+  div.style.margin="15px auto";
+  div.style.borderRadius="12px";
+  div.style.maxWidth="600px";
+  div.style.boxShadow="0 4px 10px rgba(0,0,0,0.1)";
+
+  div.innerHTML=`
+    <h3 style="color:#007FFF">${name}</h3>
+    <p>${rating}</p>
+    <p>${comment}</p>
+  `;
+
+  document.getElementById("reviewList").appendChild(div);
+
+  document.getElementById("name").value="";
+  document.getElementById("comment").value="";
+}
+</script>
+
 </body>
-</html>
+                             </html>
